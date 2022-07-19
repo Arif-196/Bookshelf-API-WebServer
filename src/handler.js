@@ -19,8 +19,7 @@ const addBookHandler = (request, h) => {
     const sendResponse = h
       .response({
         status: "fail",
-        message:
-          "Gagal menambahkan buku !. Harap Masuykan nama terlebih dahulu",
+        message: "Failed to add book!. Please enter name first",
       })
       .code(400);
     return sendResponse;
@@ -30,7 +29,7 @@ const addBookHandler = (request, h) => {
     const sendResponse = h
       .response({
         status: "fail",
-        message: "Read Page tidak boleh lebih besar dari Page Count",
+        message: "Reading Pages cannot be greater than the Number of Pages",
       })
       .code(400);
     return sendResponse;
@@ -186,7 +185,7 @@ const getBookById = (request, h) => {
   const sendResponse = h
     .response({
       status: "fail",
-      message: "Buku tidak ditemukan",
+      message: "Book not found",
     })
     .code(404);
   return sendResponse;
@@ -221,7 +220,7 @@ const updateBookHandler = (request, h) => {
       .response({
         status: "fail",
         message:
-          "Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount",
+          "Failed to update book. Reading Pages cannot be greater than the Number of Pages",
       })
       .code(400);
     return sendResponse;
@@ -250,7 +249,7 @@ const updateBookHandler = (request, h) => {
     const sendResponse = h
       .response({
         status: "success",
-        message: "Buku berhasil diperbarui",
+        message: "Book updated successfully",
       })
       .code(200);
     return sendResponse;
@@ -259,7 +258,7 @@ const updateBookHandler = (request, h) => {
   const sendResponse = h
     .response({
       status: "fail",
-      message: "Gagal memperbarui buku. Id tidak ditemukan",
+      message: "Failed to update book. Id not found",
     })
     .code(404);
   return sendResponse;
@@ -276,7 +275,7 @@ const deleteBookHandler = (request, h) => {
     const sendResponse = h
       .response({
         status: "success",
-        message: "Buku berhasil dihapus",
+        message: "Book deleted successfully",
       })
       .code(200);
     return sendResponse;
@@ -285,7 +284,7 @@ const deleteBookHandler = (request, h) => {
   const sendResponse = h
     .response({
       status: "fail",
-      message: "Buku gagal dihapus. Id tidak ditemukan",
+      message: "The book failed to delete. Id not found",
     })
     .code(404);
   return sendResponse;
